@@ -27,6 +27,7 @@ jobs:
           fi
 
       script:
+        - pip install --upgrade 'jinja2<3'
         - export SOLUTION="$(find . -iname '*.sln')"
         - env |grep SOLUTION
         - ads-deploy docs --output "${DOCS_FOLDER}/source" "${SOLUTION}"
